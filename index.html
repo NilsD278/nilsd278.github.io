@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industrialisierung – Nils Dierolf</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="rahmen">
+
+    <button class="pfeil oben" id="pfeil-oben" onclick="pfeilKlick(-1)">↑</button>
+    <button class="pfeil unten" id="pfeil-unten" onclick="pfeilKlick(1)">↓</button>
+
+    <div class="fortschritt-punkte" id="fortschritt-punkte">
+        <div class="punkt" onclick="punktKlick(0)"></div>
+        <div class="punkt" onclick="punktKlick(1)"></div>
+        <div class="punkt" onclick="punktKlick(2)"></div>
+        <div class="punkt" onclick="punktKlick(3)"></div>
+        <div class="punkt" onclick="punktKlick(4)"></div>
+    </div>
+
+    <section class="kapitel start aktiv" id="start">
+        <div class="start-hintergrund"></div>
+        <div class="start-info-box">
+            <span class="fach">Industrialisierung</span>
+            <h1>Alles wird anders?</h1>
+            
+            <p class="beschreibung">
+                Mit 5 Bausteinen erzählst du deine Geschichte der Industrialisierung in Deutschland.<br>
+                Wir zeigen dir, wie.
+            </p>
+            
+            <div class="meta-info">
+                <p><strong>Bearbeitungsdauer:</strong> ca. 90 Minuten</p>
+                <p><strong>Klasse:</strong> Kl. 8</p>
+                <p><strong>Erstellt von:</strong> Nils Dierolf</p>
+            </div>
+        </div>
+    </section> 
+
+    <section class="kapitel">
+    <div class="text">
+        <h2><strong style="color:#681818;">1.</strong> Deutschland vor der Eisenbahn</h2>
+        <p>Um 1830 reisten Menschen meistens zu Fuß, mit Pferdekutschen oder auf Flüssen.</p>
+        <p>Reisen waren langsam, teuer und beschwerlich.</p>
+        
+        <button class="weiter-btn">Los geht's</button>
+    </div>
+    <div class="bild">
+        <img src="img/eisenbahn.jpg" class="eisenbahn-bild" alt="Eisenbahn">
+    </div>
+</section>
+
+<section class="sonderseite aufgaben-seite">
+    
+    <div class="aufgaben-bereich">
+        
+        <div class="aufgaben-subseite">
+            <h2>Aufgaben (Teil 1)</h2>
+            <div style="height: 20px;"></div>
+            <p class="aufgabe-text">1. Beschreibe die Veränderungen durch die Eisenbahn anhand der Quellen.</p>
+            <textarea class="eingabe-feld" placeholder="Schreibe deine Antwort hier hinein..."></textarea>
+        </div>
+
+        <div class="aufgaben-subseite">
+            <h2>Aufgaben (Teil 2)</h2>
+            <div style="height: 20px;"></div>
+            <p class="aufgabe-text">2. Welche wirtschaftlichen Folgen hatte der Schienenstrecken-Ausbau?</p>
+            <textarea class="eingabe-feld kleine-box" placeholder="Schreibe deine Antwort hier hinein..."></textarea>
+            
+            <p class="aufgabe-text" style="margin-top: 15px;">3. Nenne die Schattenseiten der Industrialisierung.</p>
+            <textarea class="eingabe-feld kleine-box" placeholder="Schreibe deine Antwort hier hinein..."></textarea>
+        </div>
+        
+        <div class="unterseiten-nav">
+            <span class="sub-punkt aktiv" data-ziel="start"></span>
+            <span class="sub-punkt" data-ziel="aufgaben1"></span>
+            <span class="sub-punkt" data-ziel="aufgaben2"></span>
+            <span class="sub-punkt" data-ziel="abschluss"></span>
+        </div>
+    </div>
+
+    <div class="quellen-bereich">
+        <h2>Quellen zur Eisenbahn</h2>
+        <div style="height: 20px;"></div>
+        <details class="quelle-box">
+            <summary>Karikatur</summary>
+            <div class="quelle-inhalt">
+                <img src="img/pferdegespann.jpg" class="quellen-bild" alt="Pferdegespann">
+            </div>
+        </details>
+        <details class="quelle-box">
+            <summary>Eisenbahnnetz</summary>
+            <div class="quelle-inhalt">
+                <img src="img/Eisenbahnnetz.jpg" class="quellen-bild" alt="Eisenbahnnetz">
+            </div>
+        </details>
+        </div>
+
+        <div class="abschluss-bildschirm" id="abschlussBildschirm">
+        <div class="abschluss-inhalt">
+            <h2>Hervorragend gelöst!</h2>
+            <p>Bitte informiere jetzt deinen Lehrer, dass du mit den Aufgaben fertig bist.</p>
+            <button class="kapitel3-btn" id="goKapitel3">Weiter zu Kapitel 2</button>
+        </div>
+    </div>
+</section>
+
+    <section class="kapitel">
+        <div class="text">
+            <h2><strong style="color:#681818;">2.</strong> Die Umwelt leidet</h2>
+            <p>Die Auswirkungen der Industrialisierung waren offensichtlich. Beim Bau von neuen Fabriken hatten Anwohner eine einmonatige Einspruchfrist, die aber meist ungenutzt blieb.
+                Schäden, die durch industrielle Produktionen oder Bergbau entstanden, konnten eingeklagt werden, doch die wenigsten Betroffenen hatten Kenntnis davon oder besaßen genügend Geld,
+                um ihre Ansprüche geltend zu machen. Ende des 19. Jahrhunderts setzte langsam ein Bewusstsein für den Naturschutz ein, der aber kein Umweltschutz im modernen Sinn war, sondern "unberührte Natur" inmitten der Industrielandschaft wahren sollte.
+            </p>
+
+            <button class="weiter-btn">Los geht's</button>
+        </div>
+        <div class="bild">
+            <img src="img/Umweltbild1.jpg" alt="Dampflok">
+        </div>
+    </section>
+
+    <section class="sonderseite aufgaben-seite">
+    
+    <div class="aufgaben-bereich">
+        
+        <div class="aufgaben-subseite">
+            <h2>Aufgabe 1:</h2>
+            <div style="height: 20px;"></div>
+            <p class="aufgabe-text">Analysiere, ob es eine stärkere Kontrolle der Abwassereinleitung geben sollte.</p>
+            <textarea class="eingabe-feld" placeholder="Schreibe deine Antwort hier hinein..."></textarea>
+        </div>
+
+        <div class="aufgaben-subseite">
+            <h2>Aufgaben (Teil 2)</h2>
+            <div style="height: 20px;"></div>
+            <p class="aufgabe-text">2. Welche wirtschaftlichen Folgen hatte der Schienenstrecken-Ausbau?</p>
+            <textarea class="eingabe-feld kleine-box" placeholder="Schreibe deine Antwort hier hinein..."></textarea>
+            
+            <p class="aufgabe-text" style="margin-top: 15px;">3. Nenne die Schattenseiten der Industrialisierung.</p>
+            <textarea class="eingabe-feld kleine-box" placeholder="Schreibe deine Antwort hier hinein..."></textarea>
+        </div>
+        
+        <div class="unterseiten-nav">
+            <span class="sub-punkt aktiv" data-ziel="start"></span>
+            <span class="sub-punkt" data-ziel="aufgaben1"></span>
+            <span class="sub-punkt" data-ziel="aufgaben2"></span>
+            <span class="sub-punkt" data-ziel="abschluss"></span>
+        </div>
+    </div>
+
+    <div class="quellen-bereich">
+        <h2>Fischsterben in der Nähe bei Sobernheim 1905</h2>
+        <div style="height: 20px;"></div>
+        <details class="quelle-box">
+            <summary>Quelle A: Ein Zeitungsbericht 1905</summary>
+            <p></p>
+            <div class="quelle-inhalt">
+                <p><em>Ein widerlicher Anblick bot sich am Himmelfahrtstage den zahlreichen Spaziergängern dar ... In kalkmilchartiger Färbung floss das Wasser der Nahe langsam dahin ... und Tausende und Abertausende toter und sterbender Fische, darunter Hechte und Forellen ... trieben in der Flut. Viele Leute machten sich diesen Umstand zunutze und holten die Tiere heraus, um sie zum Verspeisen mit nach Hause zu nehmen - ein nicht unbedenkliches Unterfangen, war es doch dem Urteilsfähigen sofort klar, dass die armen Tiere nur einer Vergiftung zum Opfer gefallen sein konnten ... Die Angelegenheit ist der Staatsanwaltschaft zur näheren Untersuchung übergeben. Hoffentlich gelingt es dieser, hier endlich einmal Wandel zu schaffen. Ist doch der Gedanke nicht anzuweisen, dass auch die nicht eingegangenen Fische infolge des Kalkwassers krank und der menschlichen Gesundheit leicht von Schaden sein können.</em></p>
+            </div>
+        </details>
+        <div style="height: 10px;"></div>
+        <details class="quelle-box">
+            <summary>Quelle B: Ein Leserbrief zu dem Zeitungsbereicht aus Quelle A</summary>
+            <div class="quelle-inhalt">
+                <p><em>Die Fischereipacht bringt in der Stadt jährlich zirka 200 Mark ein. Die Firma Caesar & Ewald zahlt jährlich ... allein an Arbeitslöhnen durchschnittlich 35000 Mark. Die Firma muss den Betrieb einstellen, wenn sie ihre Abwässer nicht mehr loswird ... Wollen wir aber ... der ärmeren Bevölkerung Unterhalt verschaffen, dieselbe von dem Auswandern schützen und damit den Verkehr und die Geschäfte heben, so ist es nicht zu umgehen, auf die Industrie Rücksicht und die Unannehmlichkeiten, welche sie mit sich bringt, mit in Kauf zu nehmen.</em></p>
+
+                </div>
+        </details>
+        
+        </div>
+
+        <div class="abschluss-bildschirm" id="abschlussBildschirm">
+        <div class="abschluss-inhalt">
+            <h2>Hervorragend gelöst!</h2>
+            <p>Bitte informiere jetzt deinen Lehrer, dass du mit den Aufgaben fertig bist.</p>
+            <button class="kapitel3-btn" id="goKapitel3">Weiter zu Kapitel 3</button>
+        </div>
+    </div>
+    <button id="markerBtn" class="marker-btn">Markieren</button>
+</section>
+
+    <section class="kapitel">
+        <div class="text">
+            <h2><strong style="color:#681818;">3.</strong> Fortschritt mit Folgen</h2>
+            <p>Die Industrialisierung brachte viele Veränderungen.</p>
+            <p>Der steigende Kohleverbrauch führte aber auch zu Umweltproblemen.</p>
+        </div>
+        <div class="bild">
+            <img src="img/fabrik.jpg" alt="Fabrik">
+        </div>
+    </section>
+
+    <section class="kapitel ende">
+        <h2>Glückwunsch!</h2>
+        <p>Du hast alle Aufgaben gemeistert.  Bitte informiere jetzt deinen Lehrer, dass du mit allen Aufgaben fertig bist.</p>
+    </section>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
