@@ -21,6 +21,18 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 
 }
+   table {
+       width: 100%;
+       border-collapse: collapse;
+   }
+   th, td {
+       border: 1px solid #ddd;
+       padding: 8px;
+       text-align: right;
+   }
+   tr:nth-child(even) {
+       background-color: #f2f2f2;
+   }
 
 
 
@@ -53,11 +65,11 @@ body {
 @keyframes rahmenFliegtRein {
     from{
         opacity: 0;
-        transform: translateX(100%); /* Startet komplett außerhalb des Bildschirms rechts */
+        transform: translateX(100%);
     }
     to {
         opacity: 1;
-        transform: translateX(0);    /* Landet perfekt in der Mitte */
+        transform: translateX(0);
     }
 }
 
@@ -73,8 +85,6 @@ body {
     grid-template-columns: 1fr 1fr;
     align-items: center;
     padding: 50px;
-
-    /* Im Ruhezustand unsichtbar und unten geparkt */
     opacity: 0;
     transform: translateY(100%);
     z-index: 1;
@@ -83,7 +93,6 @@ body {
     transition: opacity 0.8s ease-in-out;
 }
 
-/* WICHTIG: Nur für die ALLERERSTE Seite beim Laden, damit man was sieht */
 .kapitel.start.aktiv {
     opacity: 1;
     transform: translateY(0%);
@@ -109,7 +118,6 @@ body {
     --infobox-verzögerung: calc(var(--hintergrund-verzögerung) + var(--hintergrund-dauer) - 0.3s); 
 }
 
-/* --- NEUSTYLING STARTSEITE --- */
 
 .kapitel.start {
     display: flex;
@@ -120,7 +128,6 @@ body {
     overflow: hidden;    
 }
 
-/* Das von links einfliegende Hintergrundbild */
 .start-hintergrund {
     position: absolute;
     top: 0;
@@ -135,13 +142,10 @@ body {
 
     opacity: 0;
     transform: translateX(-100%);
-    
-    /* Nutzt jetzt die Variable für die Dauer */
     animation: bildFliegtRein var(--hintergrund-dauer) cubic-bezier(0.25, 1, 0.5, 1) forwards;
     animation-delay: var(--hintergrund-verzögerung);
 }
 
-/* Die weiße Infobox auf der rechten Seite */
 .start-info-box {
     background: #ad5050;
     color: white;
@@ -198,8 +202,6 @@ body {
     margin-bottom: 5px;
 }
 
-/* --- ANIMATIONEN BINDEN --- */
-/* 1. Hintergrund fliegt von links rein UND fadet ein */
 @keyframes bildFliegtRein {
     from { 
         opacity: 0;
@@ -216,15 +218,10 @@ body {
     to { opacity: 1; transform: translateX(0); }
 }
 
-/* ==========================================================================
-   LAYOUT FÜR INHALTSKAPITEL (Seite 2, 3, 4)
-   ========================================================================== */
-
 .kapitel:not(.start) {
     display: grid;
     grid-template-columns: 1fr 1fr; 
     
-    /* ÄNDERUNG: 'start' statt 'center' – schiebt Text und Bild ganz nach oben */
     align-items: start; 
     
     padding: 0 !important; 
@@ -232,31 +229,19 @@ body {
     background: transparent; 
 }
 
-/* Linke Hälfte: Deine Box mit der Klasse "text" */
 .kapitel:not(.start) .text {
     grid-column: 1; 
-    
-    /* ANPASSUNG: 
-       Oben: 70px (schöner, edler Abstand zur Oberkante des großen Kastens)
-       Rechts: 50px
-       Unten: 50px
-       Links: 90px (Sicherheitsabstand für die Punkte bleibt erhalten) */
     padding: 70px 50px 50px 90px;  
     
     color: #222;   
 }
 
-/* Rechte Hälfte: Deine Box mit der Klasse "bild" */
 .kapitel:not(.start) .bild {
     grid-column: 2; 
     width: 100%;
-    
-    /* WICHTIG: Da das Kapitel jetzt 'align-items: start' hat, 
-       muss die Bildbox explizit 100% der Kastenhöhe einnehmen */
     height: 100%; 
 }
 
-/* Das eigentliche Bild innerhalb der Bild-Box */
 .kapitel:not(.start) .bild img {
     width: 100%;
     height: 100%;
@@ -281,10 +266,6 @@ body {
 
 }
 
-
-
-
-/* Textbereich */
 
 .text {
     color: white;
@@ -320,8 +301,6 @@ body {
 }
 
 
-
-/* Bildbereich */
 
 .bild {
 
@@ -364,7 +343,6 @@ body {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     
-    /* Standardmäßig beim Laden unsichtbar (verhindert das Aufblitzen) */
     opacity: 0; 
     visibility: hidden;
     pointer-events: none;
@@ -372,14 +350,12 @@ body {
     transition: transform 0.3s ease, opacity 0.4s ease, visibility 0.4s ease, background-color 0.3s ease; 
 }
 
-/* WICHTIG: Die neue Klasse, wenn der Pfeil da sein soll */
 .pfeil.sichtbar {
     opacity: 1 !important;
     visibility: visible !important;
     pointer-events: auto !important;
 }
 
-/* Hover-Effekt */
 .pfeil:hover {
     transform: translateX(-50%) scale(1.1);
     background: rgba(255, 255, 255, 0.15); 
@@ -434,16 +410,15 @@ body {
 
 }
 
-/* Container für die Punkte ganz links */
 .fortschritt-punkte {
     position: absolute;
-    left: 25px; /* Abstand zum ganz linken Rand des Hauptrahmens */
+    left: 25px; 
     top: 50%;
     transform: translateY(-50%);
     display: flex;
     flex-direction: column; /* Untereinander anordnen */
-    gap: 15px; /* Abstand zwischen den Punkten */
-    z-index: 10; /* Auf gleicher Höhe wie die Pfeile */
+    gap: 15px; 
+    z-index: 10; 
 }
 
 /* Der einzelne Punkt im Grundzustand */
@@ -452,9 +427,9 @@ body {
     height: 12px;
     border-radius: 50%;
     background-color: white;
-    opacity: 0.3; /* Standardmäßig leicht durchsichtig */
+    opacity: 0.3; 
     
-    cursor: pointer; /* WICHTIG: Zeigt an, dass der Punkt anklickbar ist */
+    cursor: pointer;
     transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
@@ -470,9 +445,6 @@ body {
     transform: scale(1.2); 
 }
 
-/* ==========================================================================
-   BUTTON AUF SEITE 2
-   ========================================================================== */
 .weiter-btn {
     display: inline-flex;
     align-items: center;
@@ -494,15 +466,6 @@ body {
     transform: translateX(3px); /* Bewegt den Button beim Drüberschweben minimal nach rechts */
 }
 
-/* ==========================================================================
-   NEUE SEITE: AUFGABEN & QUELLEN (Seite 5)
-   ========================================================================== */
-
-/* Spezielles Raster für diese Seite */
-/* ==========================================================================
-   STYLING FÜR DIE REINFLIEGENDE SONDERSEITE
-   ========================================================================== */
-
 .sonderseite.aufgaben-seite {
     position: absolute;
     top: 0;
@@ -513,37 +476,27 @@ body {
     grid-template-columns: 1fr 1fr;
     align-items: stretch;
     padding: 0;
-    
-    /* Im Ruhezustand unsichtbar und RECHTS geparkt */
     opacity: 0;
     transform: translateX(100%);
-    z-index: 10; /* Höherer z-index, damit sie sich über alles andere legt */
+    z-index: 10;
     pointer-events: none;
     
-    /* Schöne, flüssige Animation für das Reinfliegen */
     transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.8s ease;
 }
 
-/* Wenn die Sonderseite das Flag ".aktiv" per JS bekommt, fliegt sie rein */
 .sonderseite.aufgaben-seite.aktiv {
     opacity: 1;
     transform: translateX(0%);
     pointer-events: auto;
 }
 
-/* ==========================================================================
-   ÄNDERUNG: STYLING FÜR DEN GRAUEN BEREICH LINKS
-   ========================================================================== */
-
-/* Ersetzt deinen alten Block ".aufgaben-seite .aufgaben-bereich" */
 .aufgaben-seite .aufgaben-bereich {
-    position: relative;        /* NEU: Wichtig für die absoluten Unterseiten */
-    background-color: #f4f4f4; /* Hellgrau */
-    padding: 70px 50px 80px 90px; /* NEU: Unten mehr Platz (80px) für die Punkte */
-    overflow: hidden;          /* NEU: Schneidet die inaktive Aufgabenseite ab */
+    position: relative;  
+    background-color: #f4f4f4; 
+    padding: 70px 50px 80px 90px; 
+    overflow: hidden;         
 }
 
-/* Ersetzt deinen alten Block ".aufgaben-seite .eingabe-feld" */
 .aufgaben-seite .eingabe-feld {
     width: 100%;
     flex-grow: 1; 
@@ -562,67 +515,50 @@ body {
     border-color: #222; 
 }
 
-/* ==========================================================================
-   NEU: ANIMATION DER LINKEN UNTERSEITEN & DIE NEUEN TEXTFELDER
-   ========================================================================== */
-
-/* Jede der inneren Aufgabenseiten (wird per JS gesteuert) */
 .aufgaben-subseite {
     position: absolute;
-    top: 70px;                     /* Startet bündig im padding-Bereich */
-    left: 90px;                 /* Hält Abstand zu den weißen Punkten ganz links */
+    top: 70px;               
+    left: 90px;     
     right: 50px;
-    bottom: 90px;               /* Endet knapp über den 3 schwarzen Punkten */
+    bottom: 90px;             
     display: flex;
     flex-direction: column;
     
     opacity: 0;
-    transform: translateX(100%); /* Parkt rechts außerhalb des grauen Kastens */
+    transform: translateX(100%);
     transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.5s ease;
     pointer-events: none;
 }
 
-/* Wird per JS vergeben, wenn ein Punkt geklickt wird */
 .aufgaben-subseite.sichtbar {
     opacity: 1;
     transform: translateX(0%);
     pointer-events: auto;
 }
 
-/* Damit die zwei Eingabefelder auf Unterseite 2 nicht zu groß werden */
 .eingabe-feld.kleine-box {
     min-height: 100px;
     flex-grow: 1;
 }
 
-/* ==========================================================================
-   ERWEITERTE ANIMATIONEN (VORWÄRTS & RÜCKWÄRTS)
-   ========================================================================== */
-
-/* Zustand 1: Seite fliegt nach links aus dem grauen Kasten raus */
 .aufgaben-subseite.nach-links-raus {
     opacity: 0;
     transform: translateX(-100%);
     pointer-events: none;
 }
 
-/* Zustand 2: Seite wartet links darauf, nach rechts reinzufliegen */
 .aufgaben-subseite.von-links-warten {
     transform: translateX(-100%);
     opacity: 0;
-    transition: none; /* Verhindert ein sichtbares Zurückrutschen im Hintergrund */
+    transition: none; 
 }
 
 
 
-
-
-
-/* RECHTE SEITE: Quellen (Weißer Hintergrund) */
 .aufgaben-seite .quellen-bereich {
-    background-color: #ffffff; /* Weiß */
-    padding: 70px 90px 50px 50px; /* Rechts mehr Abstand zum Rand */
-    overflow-y: auto; /* Falls es viele Quellen werden, bleibt es scrollbar */
+    background-color: #ffffff; 
+    padding: 70px 90px 50px 50px; 
+    overflow-y: auto; 
     box-sizing: border-box;
     overscroll-behavior: contain;
     /* */
@@ -630,7 +566,6 @@ body {
     bottom: 1000px;
 }
 
-/* Die ausklappbaren Boxen (<details>) */
 .quelle-box {
     background: #f9f9f9;
     border: 1px solid #e0e0e0;
@@ -640,7 +575,6 @@ body {
     transition: box-shadow 0.3s ease;
 }
 
-/* Der klickbare Header der Quelle */
 .quelle-box summary {
     padding: 15px;
     font-weight: bold;
@@ -654,12 +588,10 @@ body {
     background: #e5e5e5;
 }
 
-/* Wenn die Quelle geöffnet ist */
 .quelle-box[open] {
     box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
-/* Der Text im Inneren der Quelle */
 .quelle-inhalt {
     padding: 15px;
     line-height: 1.6;
@@ -668,24 +600,15 @@ body {
 }
 
 .scroll-spacer {
-    height: 100px; /* Muss mindestens so hoch sein wie dein Button + Abstand */
+    height: 100px;
     width: 100%;
-    pointer-events: none; /* Der Platzhalter soll nicht anklickbar sein */
+    pointer-events: none;
 }
 
-/* ==========================================================================
-   HORIZONTAL-PUNKTE FÜR DIE AUFGABENSEITE
-   ========================================================================== */
-
-/* ==========================================================================
-   PUNKTE-NAVI UNTEN LINKS FIXIEREN
-   ========================================================================== */
 .aufgaben-bereich .unterseiten-nav {
     position: absolute;
-    bottom: 25px; /* Fest am unteren Rand des grauen Kastens */
-    
-    /* HIER DIE LINKSAUSRICHTUNG: 
-       Genauso weit eingerückt wie deine Texte (90px) */
+    bottom: 25px;
+
     left: 90px; 
     
     display: flex;
@@ -694,13 +617,8 @@ body {
     z-index: 110; 
 }
 
-/* ==========================================================================
-   DIE INTERAKTIVEN PUNKTE (MIT DYNAMISCHEM PFEIL)
-   ========================================================================== */
-
-/* Die normalen, unangeklickten Punkte */
 .sub-punkt {
-    position: relative; /* Wichtig für die Positionierung des Pfeils */
+    position: relative;
     width: 18px;
     height: 18px;
     border: 2px solid #000;
@@ -716,60 +634,42 @@ body {
     transform: scale(1.15);
 }
 
-/* Der aktive Zustand (ausgefüllter Kreis) */
 .sub-punkt.aktiv {
     background-color: #000;
 }
 
-/* --------------------------------==========================================
-   DAS GEHEIMNIS: Der Punkt DIREKT nach dem aktiven Punkt mit dem ">" Zeichen
-   --------------------------------========================================== */
 .sub-punkt.aktiv + .sub-punkt {
     background-color: transparent; 
 }
 
-/* Hier setzen wir das ">" Zeichen mitten in den Kreis hinein */
 .sub-punkt.aktiv + .sub-punkt::before {
-    content: ">";               /* Das neue, schlanke Zeichen */
+    content: ">";            
     position: absolute;
-    font-size: 11px;            /* Perfekte Größe für den 18px-Kreis */
-    font-weight: 900;           /* Macht das Zeichen schön knackig und lesbar */
+    font-size: 11px;          
+    font-weight: 900;           
     color: #000;                
-    font-family: sans-serif;    /* Erzwingt eine klare, schnörkellose Schriftart */
+    font-family: sans-serif; 
     line-height: 1;
-    
-    /* Haargenaue Zentrierung im Kreis */
     top: 50%;
-    left: 53%;                  /* 53% statt 50%, da das ">" optisch minimal nach links hängt */
+    left: 53%;         
     transform: translate(-50%, -53%); 
     transition: transform 0.2s ease;
 }
 
-/* Kleiner Animationseffekt beim Hovern: Das Zeichen rückt minimal nach rechts */
 .sub-punkt.aktiv + .sub-punkt:hover::before {
     transform: translate(-30%, -53%); 
 }
 
-/* ==========================================================================
-   ANIMATIONS-LOGIK FÜR DIE ZWEI UNTERSEITEN
-   ========================================================================== */
-
-/* Wenn wir auf Punkt 2 klicken, verändern wir das Layout leicht, 
-   damit der Fokus auf die rechte Seite wandert (optional, falls gewünscht) */
 .aufgaben-seite {
     transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
     /* */
     position: relative;
 }
 
-/* Versteckt den Pfeil-Button aus Seite 2, wenn die Sonderseite aktiv ist */
 .sonderseite.aktiv {
     pointer-events: auto;
 }
 
-/* ==========================================================================
-   NEU: ABSCHLUSS-BILDSCHIRM (FULLSCREEN ÜBER DEN GANZEN CONTAINER)
-   ========================================================================== */
 
 .abschluss-bildschirm {
     position: absolute;
@@ -777,7 +677,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #f4f4f4; /* Passt sich dem Grau der linken Seite an */
+    background-color: #f4f4f4;
     z-index: 150; /* Liegt über Aufgaben UND Quellen */
     
     display: flex;
@@ -790,13 +690,11 @@ body {
     transition: opacity 0.5s ease;
 }
 
-/* Wird per JS aktiviert */
 .abschluss-bildschirm.aktiv {
     opacity: 1;
     pointer-events: auto;
 }
 
-/* Der innere Content-Kasten für Text und Button */
 .abschluss-inhalt {
     max-width: 500px;
     padding: 30px;
@@ -814,7 +712,6 @@ body {
     color: #555;
 }
 
-/* Der große, zentrale Kapitel-3-Button */
 .kapitel3-btn {
     padding: 15px 35px;
     background-color: #000;
@@ -833,26 +730,23 @@ body {
     background-color: #222;
 }
 
-/* Hilfsklasse: Blendet die Quellen aus, wenn der Abschluss da ist */
 .quellen-versteckt {
     opacity: 0 !important;
     pointer-events: none !important;
 }
 
 .marker-btn.ausblenden {
-    display: none !important; /* Oder opacity: 0; für einen sanften Übergang */
+    display: none !important;
 }
 
 
-/* Nur für das Eisenbahn-Banner: Fokus nach links verschieben */
 .eisenbahn-bild {
     width: auto;
     height: auto;
     object-fit: cover;
-    object-position: left center; /* Verschiebt den Ausschnitt nach links */
+    object-position: left center;
 }
 
-/* Das Bild bekommt einen Zeiger, damit der Nutzer sieht: "Hier kann ich klicken" */
 .quellen-bild {
     width: 100%;
     height: auto;
@@ -862,7 +756,6 @@ body {
     transition: transform 0.3s ease;
 }
 
-/* Der neue Overlay-Layer */
 .bild-overlay {
     position: fixed;
     top: 0;
@@ -871,25 +764,22 @@ body {
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.9);
     z-index: 9999;
-    
-    /* Hier passiert die Magie: Der Container scrollt */
     overflow-y: auto; 
     display: flex;
     justify-content: center;
     cursor: zoom-out;
 }
 
-/* Das Bild selbst darf nun so groß sein wie es will */
 .bild-overlay img {
     max-width: 90%;
-    height: auto; /* WICHTIG: Erlaubt dem Bild, in der Höhe zu wachsen */
+    height: auto;
     margin: 50px auto; /* Platz oben und unten für schönes Scrollen */
     display: block;
 }
 
 .marker-btn {
     /* Positionierung */
-    position: fixed;   /* Bleibt fest am Bildschirm */
+    position: fixed; 
     bottom: 30px;      /* 30px Abstand zum unteren Rand */
     right: 30px;       /* 30px Abstand zum rechten Rand */
     z-index: 99999;     /* Liegt über allen anderen Elementen */
@@ -909,16 +799,19 @@ body {
     background-color: #333333;
 }
 
-/* Die Markierungsfarbe selbst bleibt gelb, damit man sie gut sieht */
 .highlight {
     background-color: #ffeb3b; 
     transition: background 0.3s;
     padding: 2px 0;
     border-radius: 3px;
+    cursor: pointer;
 }
 
-/* Falls execCommand ein 'span' oder 'font' Tag mit style-Attribut erzeugt */
 .quellen-bereich span, 
 .quellen-bereich font {
     transition: background 0.3s;
+}
+
+input[type="range"] {
+  accent-color: #681818;
 }
