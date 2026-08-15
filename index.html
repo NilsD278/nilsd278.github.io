@@ -22,6 +22,7 @@
         <div class="punkt" onclick="punktKlick(2)"></div>
         <div class="punkt" onclick="punktKlick(3)"></div>
         <div class="punkt" onclick="punktKlick(4)"></div>
+        <div class="punkt" onclick="punktKlick(5)"></div>
     </div>
 
     <section class="kapitel start aktiv" id="start">
@@ -29,15 +30,16 @@
         <div class="start-info-box">
             <span class="fach">Industrialisierung</span>
             <h1>Alles wird anders?</h1>
-            
+            <h2>Die Industrialisierung und ihre Spuren bis in die Gegenwart</h2>
+            <p style="height: 20px;"></p>
             <p class="beschreibung">
-                Mit 5 Bausteinen erzählst du deine Geschichte der Industrialisierung in Deutschland.<br>
+                Mit 4 Bausteinen erzählst du deine Geschichte der Industrialisierung in Deutschland.<br>
                 Wir zeigen dir, wie.
             </p>
             
             <div class="meta-info">
                 <p><strong>Bearbeitungsdauer:</strong> ca. 90 Minuten</p>
-                <p><strong>Klasse:</strong> Kl. 8</p>
+                <p><strong>Klasse:</strong> 8</p>
                 <p><strong>Erstellt von:</strong> Nils Dierolf</p>
             </div>
         </div>
@@ -45,9 +47,9 @@
 
     <section class="kapitel">
     <div class="text">
-        <h2><strong style="color:#681818;">1.</strong> Deutschland vor der Eisenbahn</h2>
-        <p>Um 1830 reisten Menschen meistens zu Fuß, mit Pferdekutschen oder auf Flüssen.</p>
-        <p>Reisen waren langsam, teuer und beschwerlich.</p>
+        <h2><strong style="color:#681818;">1.</strong> Die Eisenbahn macht mobil</h2>
+        <p>Am 7. Dezember 1835 fuhr die erste Lokomotive in Deutschland die Strecke zwischen Nürnberg und Fürth. Mit einer Geschwindigkeit von 40 km in der Stunde war die Lokomotive ungefähr sieben Mal schneller als eine Postkutsche.</p>
+        <p>Innerhalb der nächsten Jahrzehnte wuchs das Schienennetz in Deutschland rasant und verband entfernte Regionen miteinander. Der Eisenbau erzeugte eine gewaltige Nachfrage an Eisen und Stahl.</p>
         
         <button class="weiter-btn">Los geht's</button>
     </div>
@@ -61,26 +63,43 @@
     <div class="aufgaben-bereich">
         
         <div class="aufgaben-subseite">
-            <h2>Aufgaben (Teil 1)</h2>
+            <h2>Aufgabe 1</h2>
             <div style="height: 20px;"></div>
-            <p class="aufgabe-text">1. Beschreibe die Veränderungen durch die Eisenbahn anhand der Quellen.</p>
+            <p class="aufgabe-text">Beschreibe die Veränderungen durch die Eisenbahn anhand der Materialien.</p>
             <textarea class="eingabe-feld" placeholder="Schreibe deine Antwort hier hinein..."></textarea>
         </div>
 
         <div class="aufgaben-subseite">
-            <h2>Aufgaben (Teil 2)</h2>
+            <h2>Aufgabe 2</h2>
             <div style="height: 20px;"></div>
-            <p class="aufgabe-text">2. Welche wirtschaftlichen Folgen hatte der Schienenstrecken-Ausbau?</p>
-            <textarea class="eingabe-feld kleine-box" placeholder="Schreibe deine Antwort hier hinein..."></textarea>
+            <p class="aufgabe-text" style="margin-bottom: 15px;">Nationalökonom Friedrich List stellt im Jahr 1841 folgende These über die Zukunft durch die Eisenbahn auf:</p>
+            <p style="font-style: italic; margin-bottom: 15px; line-height: 1.5;">Agrikulturkraft und Manufakturkraft in einer und derselben Nation unter der nämlichen politischen Gewalt vereinigt, leben im ewigen Frieden, können durch Kriege und fremde Handelsmaßregeln in ihrer Wechselwirkung nicht gestört werden, garantiren folglich der Nation den unaufhörlichen Fortschritt im Wohlstand, Civilisation und Macht.</p>
+            <label for="volume">Wie sehr stimmst du zu?</label>
+            <input type="range" id="volume" name="volume" min="0" max="100" step="1" value="50">
+            <div style="height: 20px;"></div>
+            <p style="margin-bottom: 15px;">Beurteile die These.</p>
+            <textarea class="eingabe-feld kleine-box">Ich persönlich stimme der These von Friedrich List </textarea>
+
+        </div>
+
+        <div class="aufgaben-subseite">
+            <h2>Aufgabe 3</h2>
+            <div style="height: 20px;"></div>
+            <p class="aufgabe-text" style="margin-bottom: 15px;">Ein Arzt schrieb um 1850, als Eisenbahnen noch selten waren, dass
+            <p style="font-style: italic; margin-bottom: 15px; line-height: 1.5;">Ortsveränderungen mittels irgendeiner Art von Dampfmaschinen [...] im Interesse der öffentlichen Gesundheit verboten sein [sollten]. Die rasche Bewegungen können nicht verfehlen, bei den Passagieren die geistige Unruhe - "delirium furiosum" genannt - hervorzurufen.</p>
+            <p>Der Arzt spricht von der "geistigen Unruhe" des Menschen. Wenn wir das Bild der Eisenbahn auf die Landschaft übertragen: Welche "Unruhe" könnte die Eisenbahn der Natur im 19. Jahrhundert zugefügt haben?</p>
+            <div style="height: 20px;"></div>
+            <textarea class="eingabe-feld kleine-box" placeholder="Stelle eine Vermutung an ..."></textarea>
+            <!-- <p>Doch nicht nur die Menschen leiden, die dieses schnelle Fortbewegungsmittel nicht vertragen. Auch die Umwelt bekommt die Industrialisierung zu spüren ...</p> -->
             
-            <p class="aufgabe-text" style="margin-top: 15px;">3. Nenne die Schattenseiten der Industrialisierung.</p>
-            <textarea class="eingabe-feld kleine-box" placeholder="Schreibe deine Antwort hier hinein..."></textarea>
+
         </div>
         
         <div class="unterseiten-nav">
             <span class="sub-punkt aktiv" data-ziel="start"></span>
             <span class="sub-punkt" data-ziel="aufgaben1"></span>
             <span class="sub-punkt" data-ziel="aufgaben2"></span>
+            <span class="sub-punkt" data-ziel="aufgaben3"></span>
             <span class="sub-punkt" data-ziel="abschluss"></span>
         </div>
     </div>
@@ -89,9 +108,62 @@
         <h2>Quellen zur Eisenbahn</h2>
         <div style="height: 20px;"></div>
         <details class="quelle-box">
-            <summary>Karikatur</summary>
+            <summary>Entwicklung der Eisenbahn</summary>
             <div class="quelle-inhalt">
-                <img src="img/pferdegespann.jpg" class="quellen-bild" alt="Pferdegespann">
+                <table border="1">
+<thead>
+<tr>
+    <th></th>
+<th>Streckenlänge<br>(in 1000 km)</th>
+<th>beförderte Personen<br>(in Mio.)</th>
+<th>beförderte Güter<br>(in Mio. t)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1850</td>
+<td>4,8</td>
+<td>13</td>
+<td>2,8</td>
+</tr>
+<tr>
+<td>1870</td>
+<td>18,3</td>
+<td>215</td>
+<td>69,8</td>
+</tr>
+<tr>
+<td>1890</td>
+<td>31,9</td>
+<td>426</td>
+<td>217,8</td>
+</tr>
+<tr>
+<td>1913</td>
+<td>60,8</td>
+<td>1798</td>
+<td>676,6</td>
+</tr>
+<tr>
+<td>1925</td>
+<td>56,0</td>
+<td>2168</td>
+<td>442,6</td>
+</tr>
+<tr>
+<td>1989</td>
+<td>43,8</td>
+<td>1726</td>
+<td>654,7</td>
+</tr>
+<tr>
+<td>2000</td>
+<td>44,7</td>
+<td>2002</td>
+<td>294,4</td>
+</tr>
+</tfoot>
+</table>
             </div>
         </details>
         <details class="quelle-box">
@@ -104,19 +176,97 @@
 
         <div class="abschluss-bildschirm" id="abschlussBildschirm">
         <div class="abschluss-inhalt">
-            <h2>Hervorragend gelöst!</h2>
+            <h2>Toll gemacht!</h2>
             <p>Bitte informiere jetzt deinen Lehrer, dass du mit den Aufgaben fertig bist.</p>
             <button class="kapitel3-btn" id="goKapitel3">Weiter zu Kapitel 2</button>
         </div>
     </div>
 </section>
 
+<section class="kapitel">
+        <div class="text">
+            <h2><strong style="color:#681818;">2.</strong> Luftverschmutzung</h2>
+            <p>Gerade das, was wesentlich zum Fortschritt in der Eisengewinnung und Stahlerzeugung beigetragen hatte - die Verwendung von Steinkohle -, entpuppte sich als ein gefährlicher Luftverschmutzer.</p>
+            <p>Da auch in den Wohnungen zunehmend mit Kohle geheizt wurde, verstärkte sich das Problem noch.</p>
+            <button class="weiter-btn">Los geht's</button>
+        </div>
+        <div class="bild">
+            <img src="img/fabrik.jpg" alt="Fabrik">
+        </div>
+    </section>
+
+    <section class="sonderseite aufgaben-seite">
+    
+    <div class="aufgaben-bereich">
+        
+        <div class="aufgaben-subseite">
+            <h2>Aufgabe 1:</h2>
+            <div style="height: 10px;"></div>
+            <p class="aufgabe-text">Erkläre mithilfe von Quelle A und B, welche Risiken Arbeiter und ihre Familien ausgesetzt waren, die die Eisen- und Stahlindustrie hervorrief.</p>
+            <textarea class="eingabe-feld kleine-box" placeholder="Schreibe deine Antwort hier hinein..."></textarea>
+            <div style="height: 10px;"></div>
+            <h2>Aufgabe 2:</h2>
+            <p class="aufgabe-text" style="margin-top: 15px;">Überlege, was die Gründe dafür gewesen sein konnten, dass Politiker und Unternehmer wenig getan haben, um die Industriabgase zu verringern.</p>
+            <textarea class="eingabe-feld kleine-box" placeholder="Schreibe deine Antwort hier hinein..."></textarea>
+        </div>
+
+        <div class="aufgaben-subseite">
+            <h2>Aufgabe 3</h2>
+            <div style="height: 20px;"></div>
+            <p class="aufgabe-text">Wer profitiert deiner Meinung nach von der industriellen Produktion, und wer trägt die Kosten?</p>
+            <textarea class="eingabe-feld" placeholder="Schreibe deine Antwort hier hinein...">Ich finde, dass </textarea>
+        </div>
+        
+        <div class="unterseiten-nav">
+            <span class="sub-punkt aktiv" data-ziel="start"></span>
+            <span class="sub-punkt" data-ziel="aufgaben1"></span>
+            <span class="sub-punkt" data-ziel="aufgaben2"></span>
+            <span class="sub-punkt" data-ziel="abschluss"></span>
+        </div>
+    </div>
+
+    <div class="quellen-bereich">
+        <h2>Gefahren für die Gesundheit</h2>
+        <div style="height: 20px;"></div>
+        <p>Markiere wichtige Passagen des Textes.</p>
+        <div style="height: 10px;"></div>
+        <p><em>Hütte: Industrieanlage, die der Erzeugung von Roheisen und Stahl aus Eisenerz dient ("Eisenhütte"). Das Verschmelzen des Erzes wird "Verhütten" genannt.</em></p>
+        <div style="height: 10px;"></div>
+        <details class="quelle-box">
+            <summary>Quelle A: In einem 1877 verfassten medizinischen Gutachten hieß es über die Krankheiten der Hüttenarbeiter</summary>
+            <p></p>
+            <div class="quelle-inhalt">
+                <p><em>Vom hygienischen Standpunkt aus kann man die Hüttenarbeit als der Gesundheit nachteilig betrachten: [...] Trotz aller Verbesserungen, die in neuerer Zeit vorangenommen worden sind, ist als ein die Gesundheit der Arbeiter wesentlich beeinträchtigendes Element, welches aber von der Arbeit nie ganz zu trennen sein wird, der Hüttenrauch zu betrachten. Mit diesem Namen bezeichnet man schlechthin nicht nur die eigentlichen Gasem die sich bei den mannigfachen Metall verarbeitenden Prozessem, wie sie in den Hütten vorkommen, entwickeln, sondern auch alles, was in Form von Staub in den Hütten selbst und deren nächster Umgebung von den Gasen mit fortgerissen wird. [...] Es sind die Metallvergiftungen, denen die Hüttenarbeiter ausgesetzt sind, und zwar besonders mit Blei, Kupfer und Arsen.</em></p>
+            </div>
+        </details>
+        <div style="height: 10px;"></div>
+        <details class="quelle-box">
+            <summary>Quelle B: Aus einem Schreiben, das Bürger bereits im Jahr 1846 an einen Minister richteten</summary>
+            <div class="quelle-inhalt">
+                <p><em>Der Obstbaum gedeiht nur kümmerlich, und ist er endlich tragbar und steht in der Blüte, so braucht der Hüttenrauch diese nur gelind zu überstreichen, um sie zu vergiften. Unter den Gartenfrüchten, die man jedes Frühjahr zu säen und pflanzen pflegt, ist nicht eine, die der Hüttenrauch verschonte. [...]<br>Derartige Verluste sind wir, die wir meist arme Berg- und Hüttenarbeiter sind, auf die Dauer nicht imstande auszuhalten, sondern gehen dabei der Verarmung entgegen.</em></p>
+
+                </div>
+        </details>
+        <button class="marker-btn marker-trigger">Markieren</button>
+        </div>
+
+        <div class="abschluss-bildschirm" id="abschlussBildschirm">
+        <div class="abschluss-inhalt">
+            <h2>Hervorragend gelöst!</h2>
+            <p>Bitte informiere jetzt deinen Lehrer, dass du mit den Aufgaben fertig bist.</p>
+            <button class="kapitel3-btn" id="goKapitel3">Weiter zu Kapitel 3</button>
+        </div>
+    </div>
+</section>
+
+
     <section class="kapitel">
         <div class="text">
-            <h2><strong style="color:#681818;">2.</strong> Die Umwelt leidet</h2>
+            <h2><strong style="color:#681818;">3.</strong> Wasserverschmutzung</h2>
             <p>Die Auswirkungen der Industrialisierung waren offensichtlich. Beim Bau von neuen Fabriken hatten Anwohner eine einmonatige Einspruchfrist, die aber meist ungenutzt blieb.
                 Schäden, die durch industrielle Produktionen oder Bergbau entstanden, konnten eingeklagt werden, doch die wenigsten Betroffenen hatten Kenntnis davon oder besaßen genügend Geld,
-                um ihre Ansprüche geltend zu machen. Ende des 19. Jahrhunderts setzte langsam ein Bewusstsein für den Naturschutz ein, der aber kein Umweltschutz im modernen Sinn war, sondern "unberührte Natur" inmitten der Industrielandschaft wahren sollte.
+                um ihre Ansprüche geltend zu machen.</p> 
+                <p>Ende des 19. Jahrhunderts setzte langsam ein Bewusstsein für den Naturschutz ein, der aber kein Umweltschutz im modernen Sinn war, sondern "unberührte Natur" inmitten der Industrielandschaft wahren sollte.
             </p>
 
             <button class="weiter-btn">Los geht's</button>
@@ -132,19 +282,20 @@
         
         <div class="aufgaben-subseite">
             <h2>Aufgabe 1:</h2>
-            <div style="height: 20px;"></div>
-            <p class="aufgabe-text">Analysiere, ob es eine stärkere Kontrolle der Abwassereinleitung geben sollte.</p>
-            <textarea class="eingabe-feld" placeholder="Schreibe deine Antwort hier hinein..."></textarea>
+            <div style="height: 10px;"></div>
+            <p class="aufgabe-text">Fasse die Situation in Sobernheim mit eigenen Worten zusammen.</p>
+            <textarea class="eingabe-feld kleine-box" placeholder="Schreibe deine Antwort hier hinein..."></textarea>
+            <div style="height: 10px;"></div>
+            <h2>Aufgabe 2:</h2>
+            <p class="aufgabe-text" style="margin-top: 15px;">Argumentiere, ob es eine stärkere Kontrolle der Abwassereinleitung geben sollte.</p>
+            <textarea class="eingabe-feld kleine-box" placeholder="Schreibe deine Antwort hier hinein...">Ich finde, dass </textarea>
         </div>
 
         <div class="aufgaben-subseite">
-            <h2>Aufgaben (Teil 2)</h2>
+            <h2>Aufgabe 3</h2>
             <div style="height: 20px;"></div>
-            <p class="aufgabe-text">2. Welche wirtschaftlichen Folgen hatte der Schienenstrecken-Ausbau?</p>
-            <textarea class="eingabe-feld kleine-box" placeholder="Schreibe deine Antwort hier hinein..."></textarea>
-            
-            <p class="aufgabe-text" style="margin-top: 15px;">3. Nenne die Schattenseiten der Industrialisierung.</p>
-            <textarea class="eingabe-feld kleine-box" placeholder="Schreibe deine Antwort hier hinein..."></textarea>
+            <p class="aufgabe-text">Was machen wir heute anders, wenn wir wissen, dass eine Technik der Natur schadet?</p>
+            <textarea class="eingabe-feld" placeholder="Schreibe deine Antwort hier hinein..."></textarea>
         </div>
         
         <div class="unterseiten-nav">
@@ -156,7 +307,9 @@
     </div>
 
     <div class="quellen-bereich">
-        <h2>Fischsterben in der Nähe bei Sobernheim 1905</h2>
+        <h2>Fischsterben in der Nahe bei Sobernheim 1905</h2>
+        <div style="height: 20px;"></div>
+        <p>Markiere wichtige Passagen des Textes.</p>
         <div style="height: 20px;"></div>
         <details class="quelle-box">
             <summary>Quelle A: Ein Zeitungsbericht 1905</summary>
@@ -173,29 +326,115 @@
 
                 </div>
         </details>
+        <button class="marker-btn marker-trigger">Markieren</button>
         
         </div>
 
         <div class="abschluss-bildschirm" id="abschlussBildschirm">
         <div class="abschluss-inhalt">
-            <h2>Hervorragend gelöst!</h2>
+            <h2>Toll gelöst!</h2>
             <p>Bitte informiere jetzt deinen Lehrer, dass du mit den Aufgaben fertig bist.</p>
-            <button class="kapitel3-btn" id="goKapitel3">Weiter zu Kapitel 3</button>
+            <button class="kapitel3-btn" id="goKapitel3">Weiter zu Kapitel 4</button>
         </div>
     </div>
-    <button id="markerBtn" class="marker-btn">Markieren</button>
 </section>
 
-    <section class="kapitel">
+
+<section class="kapitel">
         <div class="text">
-            <h2><strong style="color:#681818;">3.</strong> Fortschritt mit Folgen</h2>
-            <p>Die Industrialisierung brachte viele Veränderungen.</p>
-            <p>Der steigende Kohleverbrauch führte aber auch zu Umweltproblemen.</p>
+            <h2><strong style="color:#681818;">4.</strong> Umweltverschmutzung heute</h2>
+            <p>Die Industrialisierung hat die Natur massiv verändert. Viele der Probleme von damals wie Abgase, Lärm und der Verbrauch von Ressourcen durch Industrie und Verkehr sind bis heute nicht verschwunden.</p>
+            <p>Doch im Gegensatz zum 19. Jahrhundert versuchen Staat, Unternehmen und Gesellschaft heute, die Umwelt durch strenge Gesetze und moderne Technik so gut wie möglich zu schützen.</p>
+            <button class="weiter-btn">Los geht's</button>
         </div>
         <div class="bild">
-            <img src="img/fabrik.jpg" alt="Fabrik">
+            <img src="img/Umweltverschmutzung-Industrie.jpg" alt="Umweltbild">
         </div>
     </section>
+
+    <section class="sonderseite aufgaben-seite">
+    
+    <div class="aufgaben-bereich">
+        
+        <div class="aufgaben-subseite">
+            <h2>Aufgabe 1:</h2>
+            <div style="height: 20px;"></div>
+            <p class="aufgabe-text">Betrachte das CO2-Diagramm (Quelle A) und die Texte zur Stahlindustrie (Quelle B und C). Erkläre, wie sich der Ausstoß seit der Industrialisierung entwickelt hat.</p>
+            <div style="height: 10px;"></div>
+            <textarea class="eingabe-feld kleine-box" placeholder="Schreibe deine Antwort hier hinein..."></textarea>
+            <div style="height: 10px;"></div>
+            <h2>Aufgabe 2:</h2>
+            <p class="aufgabe-text" style="margin-top: 15px;">Untersuche anhand von Quelle C (Deutsche Bahn), wie sich der Umgang mit den Umweltfolgen im Vergleich zum 19. Jahrhundert verändert hat. Welche Maßnahmen werden heute ergriffen?</p>
+            <div style="height: 10px;"></div>
+            <textarea class="eingabe-feld kleine-box" placeholder="Schreibe deine Antwort hier hinein..."></textarea>
+        </div>
+
+        <div class="aufgaben-subseite">
+            <h2>Aufgabe 3</h2>
+            <div style="height: 20px;"></div>
+            <p class="aufgabe-text">Schau auf deine Reise durch die 4 Bausteine zurück. Beantworte die Ausgangsfrage "Alles wird anders?" in 3-4 Sätzen: Was hat sich durch die Industrialisierung seit 1835 grundlegend verändert und welche Probleme und Belastungen für Mensch und Natur ziehen sich als rote Fäden bis in unsere heutige Zeit durch? Warum ist dieses Thema für unsere Welt heute so enorm wichtig?</p>
+            <div style="height: 10px;"></div>
+            <textarea class="eingabe-feld" placeholder="Schreibe deine Antwort hier hinein...">Ich finde, dass </textarea>
+        </div>
+        
+        <div class="unterseiten-nav">
+            <span class="sub-punkt aktiv" data-ziel="start"></span>
+            <span class="sub-punkt" data-ziel="aufgaben1"></span>
+            <span class="sub-punkt" data-ziel="aufgaben2"></span>
+            <span class="sub-punkt" data-ziel="abschluss"></span>
+        </div>
+    </div>
+
+    <div class="quellen-bereich">
+        <h2>Aktuelle Artikel zum Industrie heutzutage</h2>
+        <div style="height: 20px;"></div>
+        <p>Markiere wichtige Passagen des Textes.</p>
+        <div style="height: 20px;"></div>
+        <details class="quelle-box">
+            <summary>Quelle A: CO2-Emissionen in Deutschland</summary>
+            <p></p>
+            <div class="quelle-inhalt"><img src="img/CO2inDE.png" class="quellen-bild" alt="CO2 in Deutschland"></div>
+        </details>
+        <div style="height: 10px;"></div>
+        <details class="quelle-box">
+            <summary>Quelle B: Die Industrie und ihr CO2-Problem</summary>
+            <div class="quelle-inhalt"><p>Noch immer trägt die Industrie einen großen Anteil zur CO2-Verschmutzung und somit zum Klimawandel bei. Wo stehen deutsche Konzerne - und was tun sie für mehr Nachhaltigkeit?</p>
+                <p>Was kann ich einzelner Mensch tun, um das Klima zu schützen? Diese Frage wird immer wieder aufgeworfen. Viele Klimaaktivisten fordern allerdings viel eher, dass sich vor allem die Industrie bewegen sollte. Als großer CO2-Emittent seien vor allem dort Umschwung und Transformation lange notwendig. So fordert zum Beispiel Fridays For Future Deutschland, dass Deutschland, "als eines der wirtschaftsstärksten Länder und historisch größten Emittenten", sich dafür einsetzen müsse, dass die COP28 ein Erfolg werde.Und so sind auch viele deutsche Vertreter aus Industrie und Wirtschaft in Dubai vor Ort. Denn sie wissen: Ihr Anteil am weltweiten Klimawandel ist nicht gering. Die Schwerindustrie und die Herstellung von Metallen, Chemikalien aber auch Zement verbrauchen bisher vor allem eine enorme Menge fossile Energien. Dies führt zu immens hohen CO2-Emissionen. Laut Umweltbundesamt stieß der Industriesektor im Jahr 2022 über 110 Millionen Tonnen CO2-äquivalente Treibhausgase aus. Dabei hat der Sektor "Eisen und Stahl" mit etwa 29,5 Prozent den größten Anteil daran. Das entspricht rund 33 Millionen Tonnen CO2-Äquivalent.</p>
+                <p>Quelle: <a href="https://www.tagesschau.de/wirtschaft/energie/klimaschutz-schwerindustrie-stahl-beton-100.html" target="_blank">Link zum Tagesschau Online-Beitrag.</a></p>
+            </div>
+        </details>
+        <div style="height: 10px;"></div>
+        <details class="quelle-box">
+            <summary>Quelle C: Industrie in Deutschland</summary>
+            <div class="quelle-inhalt">
+                <p>Der Industriesektor ist nach der Energieerzeugung der zweitgrößte Verursacher von Treibhausgasemissionen in Deutschland. Der Industrie kommt am Wirtschaftsstandort Deutschland damit eine zentrale Rolle zur Begrenzung der Erderhitzung auf deutlich unter 2 Grad, wenn möglich auf 1,5 Grad Celsius, zu. Die Dekarbonisierung der Industrieprozesse ist somit ein wichtiger Schlüssel zur Erreichung der Klimaschutzziele und zur Stärkung der Wettbewerbsfähigkeit der deutschen Industrie in einer klimaneutralen Wirtschaft.</p>
+                <p>[...] die 30 CO2-intensivsten Industrieanlagen verursachten insgesamt 58 Millionen Tonnen CO2 im Jahr 2022. Das sind rund 8 Prozent der deutschen Treibhausgasemissionen und rund ein Drittel der gesamten Industrieemissionen der im Klimaschutzgesetz (KSG) definierten Emissionen des Industriesektors für 2022. Das hat das Öko-Institut in einer Analyse basierend auf den Daten des EU Emissionshandels im Auftrag des WWFs berechnet. Die ersten 13 Ränge in der Dirty 30 entfallen auf die Eisen- und Stahlerzeugung. Somit ist die Eisen- und Stahlerzeugung mit 51 Millionen Tonnen CO2 Emissionen der größte Teilsektor. An zweiter Stelle folgen die Emissionen aus der Zement und der Kalkherstellung, die 2022 27 Millionen Tonnen verursachten. An dritter Stelle finden wir die Chemieindustrie, die 2022 Emissionen in einem Umfang von 14 Millionen Tonnen CO2 emittierte.</p>
+                <p>Quelle: <a href="https://www.wwf.de/themen-projekte/klimaschutz/klimaschutz-deutschland/klimaschutz-in-der-industrie">Klimaschutz in der Industrie von WWF.</a></p>
+            </div>
+        </details>
+        <details class="quelle-box">
+            <summary>Quelle D: Die Deutsche Bahn über den Klimaschutz, Umweltschutz und Lärmschutz</summary>
+            <div class="quelle-inhalt">
+                <p>Wir wollen klimaneutral werden und haben uns verpflichtet, unsere Treibhausgasemissionen über die gesamte Wertschöpfungskette hinweg bis 2040 auf Net Zero zu reduzieren, d. h. eine Reduzierung der Scope-1- bis -3-Emissionen um mindestens 90% im Vergleich zu 2019. Die schwer oder anderweitig nicht vermeidbaren Restemissionen von maximal 10% wollen wir ab 2040 neutralisieren.</p>
+                <p>Um dem Verlust von Biodiversität und Ökosystemen entgegenzuwirken, handeln wir nach dem Prinzip der Mitigationshierarchie: Zunächst sind negative Auswirkungen auf die Natur so weit wie möglich zu vermeiden. Wo Eingriffe mit Blick auf Betrieb und Betriebssicherheit unvermeidbar sind, werden Maßnahmen zur Minderung der damit verbundenen Auswirkungen ergriffen. Verbleibende Beeinträchtigungen werden durch geeignete Ausgleichsmaßnahmen kompensiert, z. B. etwa durch die Schaffung naturschutzrechtlich anerkannter Ausgleichs- und Ersatzflächen.</p>
+                <p>Bis 2050 wollen wir für alle betroffenen Anwohner:innen den Lärm durch die Schiene gemindert haben.
+
+Bis Ende Juni 2025 haben wir insgesamt 2.358 km mit ortsfesten Lärmschutzmaßnahmen lärmsaniert. Mit rund 68 Mio. € wurden im ersten Halbjahr 2025 rund 14 km Schallschutzwände Nr. 25 errichtet und rund 1.200 Wohnungen mit passiven Schallschutzmaßnahmen Nr. 101 ausgestattet.</p>
+                <p>Quelle: <a href="https://zbir.deutschebahn.com/2025/de/konzern-zwischenlagebericht-ungeprueft/gruene-transformation/klimaschutz/" target="_blank">Link zur DB-Seite</a></p>
+            </div>
+        </details>
+        
+        <button class="marker-btn marker-trigger">Markieren</button>
+        
+        </div>
+
+        <div class="abschluss-bildschirm" id="abschlussBildschirm">
+        <div class="abschluss-inhalt">
+            <button class="kapitel3-btn" id="goKapitel3">Abschluss</button>
+        </div>
+    </div>
+</section>
+
 
     <section class="kapitel ende">
         <h2>Glückwunsch!</h2>
