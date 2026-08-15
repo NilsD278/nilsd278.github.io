@@ -773,7 +773,7 @@ body {
 .bild-overlay img {
     max-width: 90%;
     height: auto;
-    margin: 50px auto; /* Platz oben und unten für schönes Scrollen */
+    margin: 50px auto;
     display: block;
 }
 
