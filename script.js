@@ -4,7 +4,6 @@ const kapitel = document.querySelectorAll(".kapitel");
 const punkte = document.querySelectorAll(".fortschritt-punkte .punkt");
 let animiert = false;
 
-// Wir holen die Pfeile sicher über ihre CSS-Klassen
 const pfeilOben = document.querySelector(".pfeil.oben");
 const pfeilUnten = document.querySelector(".pfeil.unten");
 
@@ -21,7 +20,6 @@ function punktKlick(zielSeite) {
 }
 
 function wechseln(neu) {
-    // 1. Grundcheck bleibt: Nicht außerhalb der Kapitel springen oder aufs selbe Kapitel
     if (neu < 0 || neu >= kapitel.length || neu === aktuellesKapitel) {
         return;
     }
@@ -30,11 +28,6 @@ function wechseln(neu) {
     const abstand = Math.abs(neu - alt);
     const gesamtDauer = abstand === 1 ? animationsGeschwindigkeit : (animationsGeschwindigkeit * 0.5) + (abstand * 0.1); 
 
-    // ==========================================================================
-    // DIE RETTUNG FÜR SCHNELLE KLICKER:
-    // Falls noch eine Animation läuft, brechen wir sie sofort ab und räumen auf,
-    // damit die neue Animation sauber und ohne Ruckler von der aktuellen Position startet.
-    // ==========================================================================
     if (animiert) {
         kapitel.forEach((k) => {
             // Wir entfernen den EventListener, damit das alte "aufraeumen" nicht dazwischenfunkt
@@ -44,7 +37,6 @@ function wechseln(neu) {
 
     animiert = true;
 
-    // Alle beteiligten Kapitel aufreihen
     kapitel.forEach((k, index) => {
         const istBeteiligt = (index >= alt && index <= neu) || (index >= neu && index <= alt);
         if (istBeteiligt) {
@@ -90,7 +82,6 @@ function wechseln(neu) {
         kapitel[neu].removeEventListener("transitionend", aufraeumen);
     }
 
-    // Wir merken uns die Funktion direkt am Element, um sie bei schnellen Klicks löschen zu können
     kapitel[neu]._aktuelleAufraeumFunktion = aufraeumen;
     kapitel[neu].addEventListener("transitionend", aufraeumen);
 }
@@ -176,6 +167,9 @@ document.addEventListener("DOMContentLoaded", function() {
             else if (ziel === 'B') {
                 subseiten[0].classList.add('nach-links-raus');
                 subseiten[1].classList.add('sichtbar');
+            } else if (ziel === 'C') {
+                subseiten[1].classList.add('nach-links-raus');
+                subseiten[2].classList.add('sichtbar');
             } else if (ziel === 'Abschluss') {
                 if(abschlussScreen) abschlussScreen.classList.add('aktiv');
                 if(quellen) quellen.classList.add('quellen-versteckt');
@@ -197,6 +191,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 } else if (ziel === 'aufgaben2') {
                     zeigeSichtbares('B');
                     wechslePunkt('aufgaben2');
+                } else if (ziel === 'aufgaben3') {
+                    zeigeSichtbares('C');
+                    wechslePunkt('aufgaben3');   
                 } else if (ziel === 'abschluss') {
                     zeigeSichtbares('Abschluss');
                     wechslePunkt('abschluss');
@@ -228,27 +225,35 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-document.getElementById('markerBtn').addEventListener('click', function() {
-    const selection = window.getSelection();
+document.querySelectorAll('.marker-trigger').forEach(button => {
+    button.addEventListener('click', function() {
+        const selection = window.getSelection();
+        if (selection.rangeCount === 0) return;
 
-    if (selection.rangeCount > 0) {
         const range = selection.getRangeAt(0);
+        
+        // Suche, ob die Auswahl innerhalb eines bestehenden highlight-Spans liegt
+        let container = range.commonAncestorContainer;
+        let highlightSpan = container.nodeType === 3 ? container.parentElement.closest('.highlight') : container.closest('.highlight');
 
-        // Prüfen, ob die Auswahl innerhalb des Quellenbereichs liegt
-        if (range.commonAncestorContainer.parentElement.closest('.quellen-bereich')) {
-            
-            // 1. Erstelle ein span mit der highlight-Klasse
-            const span = document.createElement('span');
-            span.className = 'highlight';
-
-            // 2. Extrahiere den markierten Text in das span
+        if (highlightSpan) {
+            // LOGIK: Bereich komplett entmarkieren
+            const parent = highlightSpan.parentNode;
+            while (highlightSpan.firstChild) {
+                parent.insertBefore(highlightSpan.firstChild, highlightSpan);
+            }
+            parent.removeChild(highlightSpan);
+            selection.removeAllRanges();
+        } else if (range.commonAncestorContainer.parentElement.closest('.quellen-bereich')) {
+            // LOGIK: Neue Markierung erstellen
             try {
+                const span = document.createElement('span');
+                span.className = 'highlight';
                 range.surroundContents(span);
                 selection.removeAllRanges();
             } catch (e) {
-                // Falls die Auswahl über mehrere Elemente geht, greift dieser Fallback:
-                alert("Bitte markiere nur innerhalb eines einzigen Textblocks (keine Überschriften oder Bilder einschließen).");
+                alert("Bitte markiere nur innerhalb eines einzigen Textblocks.");
             }
         }
-    }
+    });
 });
