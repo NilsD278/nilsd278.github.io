@@ -30,7 +30,6 @@ function wechseln(neu) {
 
     if (animiert) {
         kapitel.forEach((k) => {
-            // Wir entfernen den EventListener, damit das alte "aufraeumen" nicht dazwischenfunkt
             k.removeEventListener("transitionend", k._aktuelleAufraeumFunktion);
         });
     }
